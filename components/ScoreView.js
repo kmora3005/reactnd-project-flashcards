@@ -34,8 +34,7 @@ class ScoreView extends Component {
     
     return (
     <View style={styles.center}>
-        <Text>Question answered:</Text>
-        <Text>{`${questionAnswered}`}</Text>
+        <Text>Question answered:{`${questionAnswered}`}</Text>
         <TextButton style={{padding: 10}} onPress={this.openQuizView}>
         Restart Quiz
         </TextButton>

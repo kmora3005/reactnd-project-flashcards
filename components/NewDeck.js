@@ -15,19 +15,17 @@ class NewDeck extends Component {
       cards:[]
   }
 
-  toHome = () => {
-      this.props.navigation.dispatch(NavigationActions.back({key: 'NewDeck'}))
-    }
-
   submit = () => {
     const key = guid()
     const deck = this.state
     deck.key=key
     
     this.props.dispatch(addDeck({[key]: deck}))
-    this.toHome()
-    
     submitDeck({deck, key})
+    this.props.navigation.navigate(
+      'DeckDetail',
+      { deckKey: key }
+    )
   }
 
   render() {
